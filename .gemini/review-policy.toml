@@ -1,0 +1,5 @@
+# Passed explicitly through --policy; do not rely on workspace policy discovery.
+[[rule]]
+toolName = "*"
+decision = "deny"
+priority = 999

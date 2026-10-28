@@ -1,0 +1,10 @@
+body { margin: 0; background: #f5f6f8; color: #182431; font: 16px/1.6 system-ui, sans-serif; }
+main { max-width: 600px; padding: 24px; margin: auto; }
+h1 { font-size: 28px; }
+#board { display: grid; grid-template-columns: repeat(3, 72px); gap: 6px; margin: 24px 0; }
+.cell { width: 72px; height: 72px; display: grid; place-items: center; border: 1px solid #b0bdc6; background: white; font-weight: bold; }
+.wall { background: #71818d; color: white; } .goal { background: #c4e9cc; } .player { background: #bad9ff; }
+.actions { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0; }
+button { padding: 10px 14px; cursor: pointer; font: inherit; border: 1px solid #647887; border-radius: 5px; background: white; color: inherit; }
+button:disabled { opacity: .4; cursor: default; } button:focus-visible { outline: 3px solid #2674d4; }
+pre { overflow-wrap: anywhere; white-space: pre-wrap; font-size: 13px; } #message { min-height: 3.2em; }

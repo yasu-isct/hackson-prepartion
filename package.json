@@ -14,9 +14,17 @@
     "check": "node scripts/check.mjs",
     "verify": "npm run check && npm test && npm run test:e2e",
     "gemini": "node scripts/gemini.mjs",
-    "qa": "node scripts/gemini.mjs -p \"请委派 qa-reviewer 子代理审查当前项目，按 GEMINI.md 执行测试并报告可复现问题。\"",
+    "qa": "npm run workflow:verify && npm run review:pack && node scripts/review.mjs",
     "doctor": "node scripts/doctor.mjs",
-    "test:live": "node --env-file-if-exists=.env scripts/live-smoke.mjs"
+    "test:live": "node --env-file-if-exists=.env scripts/live-smoke.mjs",
+    "practice:start": "node scripts/practice.mjs start",
+    "practice:verify": "node scripts/practice.mjs syntax && node --test practice/tests/*.test.js && node scripts/practice.mjs python",
+    "practice:e2e": "playwright test --config practice/playwright.config.js",
+    "workflow:test": "node --test tests/workflow/*.test.js",
+    "workflow:verify": "node scripts/workflow.mjs verify",
+    "review:pack": "node scripts/workflow.mjs pack",
+    "review:gemini": "node scripts/review.mjs",
+    "practice:git": "node scripts/git-lab.mjs"
   },
   "dependencies": {
     "ajv": "8.20.0"

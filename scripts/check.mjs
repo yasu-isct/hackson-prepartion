@@ -10,7 +10,7 @@ async function walk(dir) {
     else if (/\.(js|mjs)$/.test(path)) files.push(path);
   }
 }
-for (const dir of ['server', 'public', 'scripts', 'tests']) await walk(dir);
+for (const dir of ['server', 'public', 'scripts', 'tests', 'practice']) await walk(dir);
 files.push('playwright.config.js');
 for (const file of files) {
   const result = spawnSync(process.execPath, ['--check', file], { encoding: 'utf8' });
@@ -23,6 +23,6 @@ assert.ok(frontmatter, 'QA agent needs YAML frontmatter');
 const agent = parse(frontmatter[1]);
 assert.equal(agent.name, 'qa-reviewer');
 assert.equal(agent.kind, 'local');
-assert.ok(agent.tools.includes('run_shell_command'));
+assert.deepEqual(agent.tools, ['read_file', 'list_directory', 'glob', 'grep_search']);
 assert.equal(agent.model, 'inherit');
 console.log(`PASS: ${files.length} JavaScript files, JSON and QA agent configuration.`);

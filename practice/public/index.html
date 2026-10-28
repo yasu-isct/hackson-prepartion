@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>回合制 AI 接口练习</title><link rel="stylesheet" href="/style.css"><script type="module" src="/app.js"></script></head>
+<body><main><h1>走到终点</h1><p>教学练习，与比赛企划无关。蓝色是你，绿色是终点，灰色不能进入。</p>
+<p id="state" aria-live="polite"></p><div id="board" role="img" aria-label="三乘三棋盘"></div>
+<div class="actions"><button data-action="up">上 ↑</button><button data-action="down">下 ↓</button><button data-action="left">左 ←</button><button data-action="right">右 →</button></div>
+<div class="actions"><button id="ai">让 AI 走一步</button><button id="restart">重新开始</button></div>
+<p id="message" role="status">Mock 模式无需密钥。你可以自己操作，也可以请 AI 帮忙。</p>
+<details><summary>AI 这次看到了什么？</summary><pre id="view"></pre></details>
+<p>每次合法行动消耗一回合，8 回合内到达终点即成功。AI 只建议方向，不能直接改分数或游戏状态。</p>
+</main></body></html>
