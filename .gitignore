@@ -1,0 +1,15 @@
+node_modules/
+.tools/
+.venv/
+.env
+.env.*
+!.env.example
+test-results/
+playwright-report/
+artifacts/
+__pycache__/
+*.log
+.gemini/oauth_creds.json
+.gemini/google_accounts.json
+.gemini/state.json
+.gemini/tmp/

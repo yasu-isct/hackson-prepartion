@@ -1,0 +1,5 @@
+{
+  "context": { "fileName": "GEMINI.md" },
+  "experimental": { "enableAgents": true },
+  "telemetry": { "enabled": false }
+}

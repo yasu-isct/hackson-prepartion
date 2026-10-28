@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#101924"><title>Type Orbit · 星际打字任务</title><link rel="stylesheet" href="/style.css"><script type="module" src="/app.js"></script></head>
+<body>
+  <div class="shell">
+    <header><a class="brand" href="/" aria-label="Type Orbit 首页"><span class="brand-icon">✳</span> TYPE ORBIT<span class="brand-tag">PLAY / BUILD / SHIP</span></a><span class="connection"><i></i> HACKATHON LAB <span class="version">01</span></span></header>
+    <main>
+      <section class="intro"><p class="eyebrow">MISSION 001 / KEYBOARD EXPLORER</p><h1>用键盘，<br>接通整个<span>宇宙。</span></h1><p class="lede">接收信号，输入单词。在倒计时结束前，<br class="desktop">完成一场属于你的星际探索。</p><div class="intro-foot"><span class="tiny-orbit">↗</span><span>8 个单词 · 一次短暂冒险</span></div></section>
+      <section class="console" aria-label="打字游戏">
+        <div class="console-top"><span><i class="dot"></i> FLIGHT CONSOLE</span><span id="source" class="pill">正在连接</span></div>
+        <div class="stats"><div><span>任务得分</span><strong id="score">000</strong></div><div><span>剩余时间</span><strong id="timer">—<small>s</small></strong></div><div><span>信号进度</span><strong id="progress">0<small> / 8</small></strong></div></div>
+        <div class="radar"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><span class="star star-one">✦</span><span class="star star-two">✧</span><span class="orbital-point"></span><span class="planet">↗</span><div class="signal"><p id="signal-label">准备接收信号</p><h2 id="word">READY?</h2><p id="hint">选择主题，然后开始你的任务</p></div></div>
+        <form id="word-form" autocomplete="off"><label class="sr-only" for="word-input">输入当前英文单词</label><div class="input-wrap"><span>›</span><input id="word-input" placeholder="在这里输入单词" spellcheck="false" autocapitalize="off" disabled maxlength="30"><button id="submit" type="submit" disabled aria-label="提交单词">↵</button></div></form>
+        <div class="console-bottom"><span id="level-title">等待起飞</span><span>TYPE + ENTER ↵</span></div>
+      </section>
+      <section class="mission-controls" aria-label="任务设置"><div class="control-label"><span class="eyebrow">PLAN YOUR NEXT FLIGHT</span><h2>下一站，去哪里？</h2></div><div class="select-group"><label for="theme">探索主题</label><select id="theme"><option value="space">✦ 星际航行</option><option value="ocean">≈ 深海探索</option><option value="forest">♧ 森林漫游</option></select></div><div class="select-group"><label for="difficulty">任务难度</label><select id="difficulty"><option value="easy">轻松 / 45 秒</option><option value="normal" selected>标准 / 30 秒</option><option value="hard">挑战 / 20 秒</option></select></div><button id="start" class="primary">开始任务 <span>↗</span></button></section>
+      <p id="status" role="status" aria-live="polite">默认使用离线关卡，随时可以开始。</p>
+      <section class="how"><div><span>01</span><p><strong>选择你的航线</strong>三个主题，三种难度。</p></div><div><span>02</span><p><strong>捕获每一个信号</strong>输入屏幕单词，按 Enter 确认。</p></div><div><span>03</span><p><strong>完成任务，再出发</strong>每个正确单词获得 100 分。</p></div></section>
+    </main><footer><span>A SMALL GAME. A GREAT START.</span><span>为三人黑客松小队准备 <span class="footer-star">✳</span></span></footer>
+  </div>
+</body></html>

@@ -1,0 +1,29 @@
+{
+  "name": "hackathon-type-orbit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "dev": "node --watch --env-file-if-exists=.env server/index.js",
+    "test": "node --test tests/*.test.js",
+    "test:e2e": "playwright test",
+    "check": "node scripts/check.mjs",
+    "verify": "npm run check && npm test && npm run test:e2e",
+    "gemini": "node scripts/gemini.mjs",
+    "qa": "node scripts/gemini.mjs -p \"请委派 qa-reviewer 子代理审查当前项目，按 GEMINI.md 执行测试并报告可复现问题。\"",
+    "doctor": "node scripts/doctor.mjs",
+    "test:live": "node --env-file-if-exists=.env scripts/live-smoke.mjs"
+  },
+  "dependencies": {
+    "ajv": "8.20.0"
+  },
+  "devDependencies": {
+    "@google/gemini-cli": "0.66.0",
+    "@playwright/test": "1.64.1",
+    "yaml": "2.9.1"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["title", "difficulty", "durationSec", "words"],
+  "properties": {
+    "title": { "type": "string", "minLength": 1, "maxLength": 40 },
+    "difficulty": { "type": "string", "enum": ["easy", "normal", "hard"] },
+    "durationSec": { "type": "integer", "minimum": 15, "maximum": 60 },
+    "words": {
+      "type": "array", "minItems": 8, "maxItems": 20, "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[a-z]{2,12}$" }
+    }
+  }
+}
