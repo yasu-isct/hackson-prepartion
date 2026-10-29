@@ -11,6 +11,7 @@
 4. [Agent 配置与真实加载验证](docs/AGENT-CONFIG.md)：Codex/Gemini、全局/项目/局部、只读权限。
 5. [独立 practice](practice/README.md)：原生 JS + Python 标准库，小棋盘的状态/行动/AI 决策/Validator/Mock。
 6. [本轮验证结果](docs/WORKFLOW-VERIFICATION.md) 与 [当前状态](docs/STATUS.md)。
+7. [官方资料与 GitHub Desktop 回顾](docs/OFFICIAL-PREP.md)：按官方页码分成同步、提交、分支/PR、冲突四课；与主办方现场规则衔接。
 
 启动新的练习：
 
