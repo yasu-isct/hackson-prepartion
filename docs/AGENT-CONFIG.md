@@ -9,9 +9,10 @@
 ## Antigravity CLI 安装记录（2026-10-30）
 
 用户已明确授权安装。已下载并检查 [官方 Windows 安装器](https://antigravity.google/download)，由其校验下载文件的 SHA512；实际安装版本为 1.4.10，Authenticode 签名有效、签发者 Google LLC。
-程序位置：`C:\Users\orangekyuuko\AppData\Local\agy\bin\agy.exe`。使用官方 `install --skip-aliases` 将该目录加入用户 PATH，保留现有 shell 别名；未更换 Node/Python/Git、未新增 npm 依赖。
-打开新的 PowerShell，执行 `Set-Location 'D:\CodexProject\hackson-prepartion'`，再执行 `agy`。已打开的终端如未识别命令，可执行 `& "$env:LOCALAPPDATA\agy\bin\agy.exe"`。
-已验证 `--version`、`--help`、签名和用户 PATH。未执行账号登录、模型请求或自动导入旧凭证。当前 Gemini QA/Policy 配置不能直接视为 Antigravity 配置已生效，需要之后独立验证。
+初装位置：`C:\Users\orangekyuuko\AppData\Local\agy\bin\agy.exe`。使用官方 `install --skip-aliases` 加入用户 PATH、保留现有别名；但用户随后实测在普通 PowerShell 中连完整路径也无法启动，故此前安装进程内的验证不足以证明用户终端可用。
+排查发现初装文件带 EFS 加密属性。已将公开程序内容写入项目 `.tools/antigravity/bin/agy.exe`，不继承加密元数据；SHA512 与原官方程序一致、Google 签名有效、版本 1.4.10。在提权与普通受限工具进程中均已成功运行，用户终端仍需实际确认。没有修改原目录权限、没有读取凭据，也没有重新下载或安装依赖。
+推荐从项目根目录直接执行 `& '.\.tools\antigravity\bin\agy.exe'`；或先 `. .\scripts\activate.ps1`，再执行 `agy`。激活脚本只改变当前终端 PATH。二进制位于忽略目录，不进入 Git，新的 clone 不会带上程序。
+已验证版本、签名与激活后的命令解析。未执行 Antigravity 账号登录、模型请求或自动导入旧凭证。当前 Gemini QA/Policy 配置不能直接视为 Antigravity 配置已生效，需要之后独立验证。
 
 ## 一个共享项目入口
 
