@@ -6,6 +6,13 @@
 **当前认证限制（已实测）**：2026-10-28 两次账号尝试后，CLI 均返回个人版客户端不受支持，没有成功登录。Google 已于 2026-06-18 停止个人免费/Pro/Ultra 的 Gemini CLI 服务；已有 Standard/Enterprise 许可、有效 API 认证是其他路径。学校 Google Workspace 邮箱本身不等于 Code Assist 企业许可。[官方公告](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/)
 不要因为通用 authentication 页面仍写着 Google 登录就反复重试。先确认实际服务可用性。未获用户同意，不安装 Antigravity、不配置付费项目/凭证。
 
+## Antigravity CLI 安装记录（2026-10-30）
+
+用户已明确授权安装。已下载并检查 [官方 Windows 安装器](https://antigravity.google/download)，由其校验下载文件的 SHA512；实际安装版本为 1.4.10，Authenticode 签名有效、签发者 Google LLC。
+程序位置：`C:\Users\orangekyuuko\AppData\Local\agy\bin\agy.exe`。使用官方 `install --skip-aliases` 将该目录加入用户 PATH，保留现有 shell 别名；未更换 Node/Python/Git、未新增 npm 依赖。
+打开新的 PowerShell，执行 `Set-Location 'D:\CodexProject\hackson-prepartion'`，再执行 `agy`。已打开的终端如未识别命令，可执行 `& "$env:LOCALAPPDATA\agy\bin\agy.exe"`。
+已验证 `--version`、`--help`、签名和用户 PATH。未执行账号登录、模型请求或自动导入旧凭证。当前 Gemini QA/Policy 配置不能直接视为 Antigravity 配置已生效，需要之后独立验证。
+
 ## 一个共享项目入口
 
 根目录 AGENTS.md 是共同规范；GEMINI.md 仅 `@./AGENTS.md`。practice/ 的同名两文件只补局部差异。
