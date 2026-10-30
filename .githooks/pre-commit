@@ -1,2 +1,3 @@
 #!/bin/sh
-npm run check && npm test
+# Call Node directly: npm's Unix launcher requires bash, absent from GitHub Desktop's Git.
+node scripts/check.mjs && node --test tests/*.test.js

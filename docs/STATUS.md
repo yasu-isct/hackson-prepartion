@@ -7,4 +7,6 @@
 - 验证：68 项测试通过；Codex 新会话、Gemini 真实加载器/权限、Git 练习通过。
 - Google 工具：旧 Gemini CLI OAuth 被拒；Antigravity 1.4.10 改用 .tools/antigravity/bin（原 AppData 路径用户不可用），哈希/签名/普通进程启动通过，待用户确认。
 - 官方资料已读：主办方提供开发 PC/账号/环境；两份资料未指定 Gemini 工具或引擎；GitHub 教学用 Desktop + VS Code。
+- 编辑器：VS Code 1.144.0 官方便携版位于 D:\Apps\Microsoft VS Code；微软签名和版本命令通过，data/tmp 留在 D 盘；Desktop 自定义编辑器尚待用户选择。
+- 提交兼容：pre-commit 直接调用 Node；Desktop 内置 Git 无 bash 环境验证通过（语法/配置 + 35 项测试），6 项工作流测试及独立审查通过；由用户在 Desktop 亲手提交。
 - 下一步：按 OFFICIAL-PREP.md 分课亲手练同步、Commit/Push、分支/PR、冲突；Antigravity 登录/规则迁移尚未验证。
